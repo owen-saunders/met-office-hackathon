@@ -4,12 +4,11 @@ html{
   background-color: lavender;
   text-align: center;
   font-family: Tahoma;
-
 }
 
 body {
   margin:0px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 
@@ -101,4 +100,11 @@ body {
   top: -20px;
   right: -10px;
   transition: top 300ms ease-out, right 300ms ease-out, opacity 300ms ease-out;
+}
+
+.cyclone-data {
+  display: none;
+  color: aqua;
+  background-color: black;
+  margin-top: 10px;
 }

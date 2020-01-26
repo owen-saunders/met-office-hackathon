@@ -32,11 +32,11 @@
       </form>
 
       <div class="map">
-        <iframe width="80%" height="500px" src="./basemap.php"></iframe>
+        <iframe width="80%" height="500px" src="./Example1_Gladys.html"></iframe>
       </div>
 
       <div class="cyclone-data">
-
+        <?php  ?>
       </div>
     </div>
   </body>

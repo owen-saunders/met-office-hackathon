@@ -8,6 +8,8 @@
     $file = fopen("cyclonedata.csv", "r");
     $array = array();
 
+    array_push($array, $sid);
+
     while (!feof($file)) {
         $line = fgets($file);
 
@@ -18,9 +20,12 @@
         if ($flag) {
             if (strpos($line, $sid) !== false) {
                 $word = explode(',', $line);
-                echo "Latitude: " . $word[8] . " - Longitude: " . $word[9] . "<br>";
+                array_push($array, " Basin: " . $word[3] . " SubBasin: " . $word[4] . " Time: " . $word[6] . " Nature: " . $word[7] . 
+                " Latitude: " . $word[8] . "  Longitude: " . $word[9] . " Speed: " . $word[161] . " Direction: " . $word[162] . "<br>");
             }else {
-                echo "end";
+                foreach ($array as $ar) {
+                    echo $ar . '<br>';
+                }
                 exit(-1);
             }
         }
