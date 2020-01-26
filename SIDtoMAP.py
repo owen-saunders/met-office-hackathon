@@ -17,22 +17,17 @@ df = pd.concat(mylist, axis= 0)
 
 # Convert to geodata with different epsg
 crs = {'init':'epsg:4326'}
+
 geometry = [Point(x,y) for x,y in zip(df['LON'], df['LAT'])]
 geo_df = gpd.GeoDataFrame(df, crs = crs, geometry = geometry).to_crs(epsg=3857)
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('SID', help="Provide a SID")
-   
-parser.add_argument('-lt', dest='lats', action='append', 
-    help="Provides a Latitude")
-
-parser.add_argument('-ln', dest='lons', action='append', 
-    help="Provides a Longitude")
+parser.add_argument('-s', dest='sids', action='append', help="Provide a SID")
 
 #### USER INPUT HERE - REQUIRES SID
 arg = parser.parse_args()
-
+print(arg)
 Map = folium.Map(location=[50.71984,-3.53019], zoom_start=2)
 selected = []
 selected.append(geo_df[geo_df["SID"] == arg])
