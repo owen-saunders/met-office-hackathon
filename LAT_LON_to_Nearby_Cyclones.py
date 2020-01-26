@@ -27,7 +27,9 @@ parser.add_argument('lats',  help="Provides a Latitude")
 parser.add_argument('lons', help="Provides a Longitude")
 
 #### USER INPUT HERE - REQUIRES LAT and LON
-lat,lon = parser.parse_args()
+args = parser.parse_args()
+lat = args.lats
+lon = args.lons
 
 def within_distance_of(lat,lon,distance):
     nearby = []
