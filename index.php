@@ -6,6 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="popup.js"></script>
     <meta charset="utf-8">
     <title>Home</title>
@@ -15,7 +16,7 @@
     <div class="rain">
       <script src="sketch.js"></script>
       <script src="drop.js"></script>
-      <input type="button" onclick="start()" value="Toggle Rain">
+      <input type="button" onclick="start();" value="Start Rain">
     </div>
 
     <div class="container">
@@ -24,7 +25,7 @@
       </div>
       <!-- Creates the search bar and button -->
 
-      <form class="dataTable" action="post.php" method="post">
+      <form class="dataTable" action="post.php" id="postform">
         <div class="search-box">
           <input type="text" name="SID" placeholder=" "/><span></span>
         </div>
@@ -32,12 +33,34 @@
       </form>
 
       <div class="map">
-        <iframe width="80%" height="500px" src="./Example1_Gladys.html"></iframe>
+        <iframe width="80%" height="500px" src="./2019364S19060.html"></iframe>
       </div>
 
-      <div class="cyclone-data">
-        <?php  ?>
+      <div id="cyclone-data"></div>
+    
       </div>
-    </div>
+
+      <script>
+        // Attach a submit handler to the form
+        $( "#postform" ).submit(function( event ) {
+        
+          // Stop form from submitting normally
+          event.preventDefault();
+        
+          // Get some values from elements on the page:
+          var $form = $( this ),
+            term = $form.find( "input[name='SID']" ).val(),
+            url = "post.php";
+        
+          // Send the data using post
+          var posting = $.post( url, { SID: term } );
+        
+          // Put the results in a div
+          posting.done(function( data ) {
+            var content = $( data ).find( "#content" );
+            $( "#cyclone-data" ).empty().append( content );
+          });
+        });
+        </script>
   </body>
 </html>

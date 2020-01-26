@@ -1,6 +1,6 @@
 <?php 
     // 1842298N11080
-    $sid = htmlentities($_POST['SID']);
+    $sid = htmlentities($_POST['term']);
     $sid = trim($sid);
 
     $flag = false;
@@ -8,7 +8,7 @@
     $file = fopen("cyclonedata.csv", "r");
     $array = array();
 
-    array_push($array, $sid);
+    array_push($array, "SID: ". $sid);
 
     while (!feof($file)) {
         $line = fgets($file);
