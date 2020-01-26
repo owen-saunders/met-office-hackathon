@@ -10,8 +10,8 @@
 var drops = [];
 
 function setup() {
-  var wheight = window.innerHeight;
-  var wwidth = window.innerWidth;
+  var wheight = window.screen.height*2;
+  var wwidth = window.screen.width;
 
   createCanvas(wwidth, wheight);
   for (var i = 0; i < 500; i++) {

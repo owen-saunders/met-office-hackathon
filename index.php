@@ -14,29 +14,21 @@
     <div class="rain">
       <script src="sketch.js"></script>
       <script src="drop.js"></script>
+    </div>
 
     <div class="container">
-      <h1>Find Yo' Cyclone</h1>
+        <h1>Find Yo' Cyclone</h1>
 
-      <!-- Creates the search bar and button -->
-      <div class="dataTable">
-        <input type="search" name="search" id="searchBar" placeholder="Where Yo' Cyclone...">
-        <button onclick="searchItem(document.getElementById('searchBar').value)">	&#128269;</button>
-      </div>
+        <!-- Creates the search bar and button -->
 
-      <div class="dataTable">
-        <button onclick="popfunc()">Hello</button>
-      </div>
+        <form class="dataTable" action="post.php" method="post">
+          <input type="search" name="SID" id="searchBar" placeholder="What Yo' SID...">
+          <input type="submit" value="Search">
+        </form>
 
-      <div class="map">
-        <iframe width="75%" height="500px" src="./crimemap.html"></iframe>
-      </div>
-
-      <p id="test">Test</p>
-      <div class="key">
-        <p style="border: 3px solid black;">This will be the key</p>
-      </div>
-    </div>
+        <div class="map">
+          <iframe width="75%" height="500px" src="./crimemap.html"></iframe>
+        </div>
     </div>
   </body>
 </html>

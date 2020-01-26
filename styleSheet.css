@@ -9,19 +9,21 @@ html{
 
 body {
   margin:0px;
+  overflow: hidden;
 }
 
 
 .container {
-  background-color: lightblue;
-  margin-right: 20%;
-  margin-left: 20%;
+  margin-left: 25%;
   padding: 10px;
   width: 50vw;
   height: 100vh;
+  z-index: 1;
+  position: absolute;
 }
 
 .rain {
+  margin: auto;
   position: absolute;
 }
 
