@@ -15,6 +15,7 @@
     <div class="rain">
       <script src="sketch.js"></script>
       <script src="drop.js"></script>
+      <input type="button" onclick="start()" value="Toggle Rain">
     </div>
 
     <div class="container">
@@ -31,7 +32,11 @@
       </form>
 
       <div class="map">
-        <iframe width="80%" height="500px" src="./MapExample.html"></iframe>
+        <iframe width="80%" height="500px" src="./basemap.php"></iframe>
+      </div>
+
+      <div class="cyclone-data">
+
       </div>
     </div>
   </body>

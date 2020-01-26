@@ -17,7 +17,8 @@
         
         if ($flag) {
             if (strpos($line, $sid) !== false) {
-                echo $line;
+                $word = explode(',', $line);
+                echo "Latitude: " . $word[8] . " - Longitude: " . $word[9] . "<br>";
             }else {
                 echo "end";
                 exit(-1);
