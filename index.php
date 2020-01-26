@@ -25,9 +25,9 @@
 
       <form class="dataTable" action="post.php" method="post">
         <div class="search-box">
-          <input type="text" placeholder=" "/><span></span>
+          <input type="text" name="SID" placeholder=" "/><span></span>
         </div>
-            <script  src="./script.js"></script>
+            <script src="./script.js"></script>
       </form>
 
       <div class="map">

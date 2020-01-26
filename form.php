@@ -9,9 +9,9 @@
             <input type="text" name="SID" placeholder="Enter SID...">
         </div>
 
-        <div class="container" >
-            <button class="btn submitbutton" type="submit" value="Add">Add</button>
-        </div>
+        
+            <input class="btn submitbutton" type="submit" value="Add">
+        
         </form>
 
         <div class="container" >
